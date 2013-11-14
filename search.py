@@ -1,10 +1,10 @@
 from twython import Twython, TwythonError
 import os
 n = chr(34)
-name_fichero     = "peru.xml"     ## fichero resultado .xml de busquedas
-fichero_palabras = "datos.txt"    ## fichero de entrada de palabras
+name_fichero     = "claro.xml"     ## fichero resultado .xml de busquedas
+fichero_palabras = "claro.txt"    ## fichero de entrada de palabras
 name_database    = "bd1"
-name_table       = "peru"
+name_table       = "claro" ## nueva tabla ..
 
 #####1111111111 datos de la tabla "encabezado" 
 ficheroA = open(name_fichero,"a")
@@ -14,7 +14,7 @@ ficheroA.write("<?xml version="+n+"1.0"+n+" encoding="+n+"utf-8"+n+"?>\n" #versi
                +"<pma:database name="+n+name_database+n+" collation="+n+"latin1_swedish_ci"+n+" charset="+n+"latin1"+n+">\n"#database name
                +"<pma:table name="+n+name_table+n+">\n" #table name 
                  
-               +"CREATE TABLE `peru` ( `palabra` char(50) DEFAULT NULL,`cuenta` char(50) DEFAULT NULL,`fecha` char(50) DEFAULT NULL,`comentario` char(250) DEFAULT NULL)\n"   
+               +"CREATE TABLE `"+name_table+"` ( `palabra` char(50) DEFAULT NULL,`cuenta` char(50) DEFAULT NULL,`fecha` char(50) DEFAULT NULL,`comentario` char(250) DEFAULT NULL)\n"   
                +"ENGINE=InnoDB DEFAULT CHARSET=latin1;\n"
               
                +"</pma:table>\n"
@@ -45,7 +45,7 @@ def busquedaPalabras(entrada,salida):
                   CUENTA    = tweet['user']['screen_name'].encode('utf-8')
                   FECHA      = tweet['created_at']
                   COMENTARIO = tweet['text'].encode('utf-8')
-                  fileOuput.write("<table name="+n+"peru"+n+"><column name="+n+"palabra"+n+">"+PALABRA+"</column><column name="+n+"cuenta"+n+">"+CUENTA+"</column><column name="+n+"fecha"+n+">"+FECHA)
+                  fileOuput.write("<table name="+n+name_table+n+"><column name="+n+"palabra"+n+">"+PALABRA+"</column><column name="+n+"cuenta"+n+">"+CUENTA+"</column><column name="+n+"fecha"+n+">"+FECHA)
                   fileOuput.write("</column><column name="+n+"comentario"+n+">"+COMENTARIO+"</column></table>\n")
     fileOuput.write("</database>\n </pma_xml_export>\n")
     fileOuput.close()

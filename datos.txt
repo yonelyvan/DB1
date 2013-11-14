@@ -6,5 +6,3 @@ peru
 humala
 nadine
 corrupcion
-ollanta
-presidente

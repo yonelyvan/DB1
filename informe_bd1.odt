@@ -1,0 +1,14 @@
+Informe de proyecto final
+
+
+1) instalación de API de Twitter en Linux Ubuntu
+            prosedemos de la siguiente manera:
+	1.1) instalamos  Python
+
+	1.2) procedemos con la instalación de la API twitter con los siguientes comandos:
+		easy_install --upgrade twitter 
+		easy_install Twitter
+		easy_install pip
+		easy_install tweepy        
+		easy_install twython       
+            Tweepy y twython  ambas son API de Twitter, nosotros usaremos twython.

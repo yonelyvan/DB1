@@ -1,6 +1,37 @@
-
 SHOW INDEX FROM name_table;           // muestra las indices q tien la tabla 'name_tyable'.
 DROP INDEX name_index ON  name_table; // elimina el indice 'name_index' de la tabla 'nname_table'.
 
 ==========================================
 ALTER TABLE name_table ADD INDEX (id); // al hacer las consultas sera mas rapido ya q usa un BTREE por defecto.
+
+
+
+
+
+============otros===================
+Manipulación:
+
+drop table [table]; - Elimina la tabla, incluyendo registros y estructura.
+drop table if exists [table]; - Elimina la tabla, pero verifica que exista.
+truncate table [table]; - Elimina los registros, pero mantiene la esrtuctura de la tabla.
+rename table [table] to [nuevo nombre de tabla]; - Renombra una tabla.
+Algunos comandos útiles:
+
+select * from [table] limit [numero]; - Muestra los registros desde el 1 hasta el número.
+Ej. select * from tabla limit 10; - Muestra los 10 primeros registros.
+select * from [table] limit [numero inicio],[numero]; - Muestra los registros desde el número de inicio hasta número inicio + número.
+Ej. select * from tabla limit 11,10; - Muestra desde registro 11 hasta el 20.
+Bases de datos en consola
+
+$ mysqladmin -u -p create - crear base de datos.
+$ mysqladmin -u -p drop - borrar la base de datos.
+$ mysqladmin -u root -p proc - listar procesos en ejecución.
+$ mysqladmin -u root -p -i 5 status - verificar status cada 5 segundos.
+$ mysqldump --opt -u -h -p > /path/to/file - Exportar base de datos a fichero.
+$ mysqldump --opt -u -h --all-databases -p > /path/to/file - Exportar TODAS las bases de datos a fichero.
+$ mysql -h -u -p < /path/to/file - Importar el fichero a mysql
+$ mysqlcheck -o -u root -p --all-databases - Optimizar las bases de datos.
+Verificación y reparación de bases de datos erroneas:
+
+check table [table]; - Verificar tabla.
+repair table [table]; - Reparar tabla rota.

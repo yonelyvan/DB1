@@ -1,0 +1,3 @@
+
+
+ALTER TABLE name_table ADD INDEX (id); // al hacer las consultas sera mas rapido ya q usa un BTREE por defecto.

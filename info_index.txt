@@ -3,7 +3,7 @@ DROP INDEX name_index ON  name_table; // elimina el indice 'name_index' de la ta
 
 ==========================================
 ALTER TABLE name_table ADD INDEX (id); // al hacer las consultas sera mas rapido ya q usa un BTREE por defecto.
-
+CREATE INDEX id_index ON redes(id);    // crear index
 
 
 

@@ -9,12 +9,15 @@ CREATE INDEX id_index ON redes(id);    // crear index
 CREATE UNIQUE INDEX indice USING BTREE ON redes (id); ///
 
 ============otros===================
+_____________________// ids repetidos
 SELECT id, COUNT( * ) 
 FROM name_table
 GROUP BY id
 HAVING COUNT( * ) >1
-
-
+_____________________// eliminar primary key
+ALTER TABLE `avril`
+  DROP PRIMARY KEY,
+____________________
 
 
 ==============================

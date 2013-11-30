@@ -15,7 +15,7 @@ FROM name_table
 GROUP BY id
 HAVING COUNT( * ) >1
 _____________________// eliminar primary key
-ALTER TABLE `avril`
+ALTER TABLE name_table
   DROP PRIMARY KEY,
 ____________________
 

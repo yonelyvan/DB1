@@ -6,9 +6,18 @@ ALTER TABLE name_table ADD INDEX (id); // al hacer las consultas sera mas rapido
 CREATE INDEX id_index ON redes(id);    // crear index
 
 
-
+CREATE UNIQUE INDEX indice USING BTREE ON redes (id); ///
 
 ============otros===================
+SELECT id, COUNT( * ) 
+FROM name_table
+GROUP BY id
+HAVING COUNT( * ) >1
+
+
+
+
+==============================
 Manipulación:
 
 drop table [table]; - Elimina la tabla, incluyendo registros y estructura.

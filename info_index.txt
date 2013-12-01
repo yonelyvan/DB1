@@ -30,6 +30,15 @@ CREATE TABLE temporal AS SELECT id FROM a group by id  having count(*)>1;
 ------------------------------------------------------------------------
 
 
+tratamiento cadenas de texto:
+SELECT ORD( 'A' ) //retorna:   65
+select char(65,66,67); ///retorna:   ABC
+SELECT CONCAT( 'Holi,', ' ', 'cm vay?' ) // retorna:   holi, cm vay?
+concat_ws(separador,cadena1,cadena2,...): "ws" son las iniciales de "with separator". El primer argumento especifica el separador que utiliza para los demás argumentos; el separador se agrega entre las cadenas a concatenar. Ejemplo:
+SELECT CONCAT_WS( '-', '1', '2', '3' );  ///retorna  1-2-3
+SELECT FIND_IN_SET( 'hola', 'como esta,hola,buen dia' ) retorna 2 // la posición de ‘hola’
+SELECT LENGTH( 'Hola' )  /// retorna 4 
+http://www.mysqlya.com.ar/temarios/descripcion.php?cod=75&punto=25
 
 
 

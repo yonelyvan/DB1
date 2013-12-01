@@ -18,6 +18,29 @@ _____________________// eliminar primary key
 ALTER TABLE name_table
   DROP PRIMARY KEY,
 ____________________
+-------------------------------------------------------------------
+// repetidos
+SELECT id,count(*) FROM temp GROUP BY id HAVING COUNT( * ) >1; 
+
+//copia a una tabla “temporal” sin repetidos
+CREATE TABLE temporal AS SELECT * FROM ciudades GROUP BY (id);
+
+///copiamos todos los ids de los registros repetidos
+CREATE TABLE temporal AS SELECT id FROM a group by id  having count(*)>1; 
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ==============================

@@ -29,7 +29,6 @@ CREATE TABLE temporal AS SELECT * FROM ciudades GROUP BY (id);
 CREATE TABLE temporal AS SELECT id FROM a group by id  having count(*)>1; 
 ------------------------------------------------------------------------
 
-
 tratamiento cadenas de texto:
 SELECT ORD( 'A' ) //retorna:   65
 select char(65,66,67); ///retorna:   ABC
@@ -38,12 +37,19 @@ concat_ws(separador,cadena1,cadena2,...): "ws" son las iniciales de "with separa
 SELECT CONCAT_WS( '-', '1', '2', '3' );  ///retorna  1-2-3
 SELECT FIND_IN_SET( 'hola', 'como esta,hola,buen dia' ) retorna 2 // la posición de ‘hola’
 SELECT LENGTH( 'Hola' )  /// retorna 4 
-http://www.mysqlya.com.ar/temarios/descripcion.php?cod=75&punto=25
+SELECT SPACE( 'hola                como              vay' )//elimina espacios en blanco dejando solo un espacio 
+SELECT SUBSTRING( 'MySQL con Clase', 7, 3 ) // retorna ‘con’ imprime de la pocicion 7 los siguiente 3 chars
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
+SELECT SUBSTRING_INDEX(SUBSTRING_INDEX('www.mysql.com.pe','.',-4), '.', 1);   /// 'www'
 
+SELECT SUBSTRING_INDEX(SUBSTRING_INDEX('www.mysql.com.pe','.',-3), '.', 1);   ///'mysql'
+ 
+SELECT SUBSTRING_INDEX(SUBSTRING_INDEX('www.mysql.com.pe','.',-2), '.', 1);   ///'com'
 
-
+SELECT SUBSTRING_INDEX(SUBSTRING_INDEX('www.mysql.com.pe','.',-1), '.', 1);   ///'pe'
+////////////////////////////////////////////////////////////////////////////////////
 
 
 

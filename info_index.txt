@@ -52,7 +52,7 @@ SELECT SUBSTRING_INDEX(SUBSTRING_INDEX('www.mysql.com.pe','.',-1), '.', 1);   //
 ////////////////////////////////////////////////////////////////////////////////////
 
 
-alter table tweets add fulltext(`comentario`); ///indice fulltext permite buscar algo semegante como '%palabra%'
+alter table tweets add fulltext(`comentario`); ///indice fulltext permite buscar algo semejante como like '%palabra%'
 // solo funciona para motor de almacenamiento MYISAN .(motores mas conocidoe MYISA Y InnoDB)
 
 

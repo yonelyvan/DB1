@@ -1,3 +1,9 @@
+_________acceso desde terminal________
+  mysql -h localhost -u root -p  --entrar en mysql , poner password
+
+  SHOW PROCESSLIST; --ver prosesos
+  KILL 416;   -- matar proseso 416
+_______________________________________________
 SHOW INDEX FROM name_table;           // muestra las indices q tien la tabla 'name_tyable'.
 DROP INDEX name_index ON  name_table; // elimina el indice 'name_index' de la tabla 'nname_table'.
 

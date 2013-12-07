@@ -88,7 +88,7 @@ FROM  `isam`
 WHERE MATCH (comentario) AGAINST ('+reves coat'IN BOOLEAN MODE)
 limit 0,20
 ______________________________________________________
-CREATE TABLE isam50(id bigint NOT NULL AUTO_INCREMENT, -- id MEDIUMINT NOT NULL AUTO_INCREMENT,
+CREATE TABLE isam50(id bigint NOT NULL AUTO_INCREMENT, 
                    palabra     char(20) , 
                    cuenta      char(20) ,
                    fecha       char(20) ,
@@ -98,6 +98,11 @@ CREATE TABLE isam50(id bigint NOT NULL AUTO_INCREMENT, -- id MEDIUMINT NOT NULL 
                    fulltext(comentario)
   )
   ENGINE = MYISAM;
+
+INSERT INTO isam50(palabra,cuenta,fecha,comentario)
+SELECT palabra,cuenta,fecha,comentario
+FROM   isam
+WHERE id_tweet=609876554876530;
 
 ______________________________________________________
 

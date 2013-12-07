@@ -59,6 +59,9 @@ SELECT * FROM  `tenm`
 WHERE MATCH (`comentario`) AGAINST ('+reves -coat'); // retirna tweets q contienes esa palabra
 
 __________________________________________________
+//para id_tweet usamos un btree indice unico 
+//para palabra y fecha un btree  acepta repeticiones
+
 create table isam (id_tweet    bigint,
                    palabra     char(20) , 
                    cuenta      char(20) ,
@@ -71,7 +74,103 @@ create table isam (id_tweet    bigint,
                    fulltext(comentario)
                    )
                    ENGINE = MYISAM;
+                   
+      
+///buscando sub cadenas en comentario usando motor de almacenamiento MYISAM y un indice FULLTEXT             
+SELECT * 
+FROM  `isam` 
+WHERE MATCH (comentario) AGAINST ('+reves coat'IN BOOLEAN MODE)
+limit 0,20
 ______________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

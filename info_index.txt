@@ -58,6 +58,23 @@ alter table tweets add fulltext(`comentario`); ///indice fulltext permite buscar
 SELECT * FROM  `tenm` 
 WHERE MATCH (`comentario`) AGAINST ('+reves -coat'); // retirna tweets q contienes esa palabra
 
+__________________________________________________
+create table isam (id_tweet    bigint,
+                   palabra     char(20) , 
+                   cuenta      char(20) ,
+                   fecha       DATE      ,
+                   comentario  char(200)  , 
+                   
+                   unique index using BTREE(id_tweet),
+                   index using BTREE(palabra),
+                   index using BTREE(fecha),
+                   fulltext(comentario)
+                   )
+                   ENGINE = MYISAM;
+______________________________________________________
+
+
+
 
 
 

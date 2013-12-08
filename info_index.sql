@@ -107,8 +107,20 @@ WHERE id_tweet=609876554876530;
 
  SELECT DATE_ADD('2013-01-01 00:00:00', INTERVAL 1 SECOND); -- '2013-01-01 00:00:01'
  INSERT INTO `tiempo`(`fecha`) VALUES ( DATE_ADD('2013-01-01 00:00:00', INTERVAL 1 SECOND) ); 
-______________________________________________________
-
+--______________________________________________________
+--________table oficial______________________
+CREATE TABLE isam30(id bigint NOT NULL AUTO_INCREMENT, 
+                   palabra     char(20) , 
+                   cuenta      char(20) ,
+                   fecha       DATETIME ,
+                   comentario  char(200)  , 
+                   PRIMARY KEY (id),
+                   index using BTREE(palabra),
+                   index using BTREE(fecha),
+                   fulltext(comentario)
+  )
+  ENGINE = MYISAM;
+--_______________________________________________________
 
 --FUNCIONES //////////////////////////////////////////
 CREATE FUNCTION t1 (s DATETIME) RETURNS DATETIME

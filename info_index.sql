@@ -106,6 +106,7 @@ WHERE id_tweet=609876554876530;
 
 
  SELECT DATE_ADD('2013-01-01 00:00:00', INTERVAL 1 SECOND); -- '2013-01-01 00:00:01'
+ INSERT INTO `tiempo`(`fecha`) VALUES ( DATE_ADD('2013-01-01 00:00:00', INTERVAL 1 SECOND) ); 
 ______________________________________________________
 
 

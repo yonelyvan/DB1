@@ -110,8 +110,12 @@ WHERE id_tweet=609876554876530;
 ______________________________________________________
 
 
+--FUNCIONES //////////////////////////////////////////
+CREATE FUNCTION t1 (s DATETIME) RETURNS DATETIME
+RETURN DATE_ADD(S, INTERVAL 1 SECOND);
 
 
+--////////////////////////////////////////////
 
 
 

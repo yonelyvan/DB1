@@ -115,11 +115,13 @@ CREATE FUNCTION t1 (s DATETIME) RETURNS DATETIME
 RETURN DATE_ADD(S, INTERVAL 1 SECOND);
 
 
+
 --////////////////////////////////////////////
 
 ------------------------------ editar tablas como aumentar columna eliminar añadir indice etc
 http://flossblog.wordpress.com/2011/01/24/crear-modificar-eliminar-tablas-en-mysql/
 
+UPDATE tiempo SET tweet="hello world" WHERE 1; -- modificar datos de una tabla
 
 
 

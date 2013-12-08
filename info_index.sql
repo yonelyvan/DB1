@@ -137,6 +137,37 @@ UPDATE tiempo SET tweet="hello world" WHERE 1; -- modificar datos de una tabla
 
 
 
+/////////////
+1
+hp 30
+computadoras
+servicios
+impresoras
+manuales
+productos
+laptop
+asistencia
+tecnica
+equipo
+desarrollo
+
+claro
+promociones
+llamadas
+prepago
+postpago
+claroTv
+internet
+cable
+
+peru
+ollanta
+nadine
+estado
+presidente
+
+
+
 
 
 

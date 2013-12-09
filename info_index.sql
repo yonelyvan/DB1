@@ -138,8 +138,6 @@ UPDATE tiempo SET tweet="hello world" WHERE 1; -- modificar datos de una tabla
 
 
 /////////////
-1
-hp 20
 computadoras
 servicios
 impresoras
@@ -162,7 +160,28 @@ cable
 promociones
 smartphones
 
+peru
+ollanta
+militar
+nadine
+gobierno
+nacionalista
+presidente
+capital
+lima
+politica
 
+gato
+perro
+leon
+tigre
+oso
+raton
+caballo
+pato
+loro
+paloma
+///////////
 
 
 

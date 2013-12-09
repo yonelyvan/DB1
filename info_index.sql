@@ -139,7 +139,7 @@ UPDATE tiempo SET tweet="hello world" WHERE 1; -- modificar datos de una tabla
 
 /////////////
 1
-hp 30
+hp 20
 computadoras
 servicios
 impresoras
@@ -159,18 +159,8 @@ postpago
 claroTv
 internet
 cable
-
-peru
-ollanta
-nadine
-estado
-presidente
-
-
-
-
-
-
+promociones
+smartphones
 
 
 

@@ -4,7 +4,9 @@ _________acceso desde terminal________
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
   --------------------------------
-  
+  CREATE FULLTEXT INDEX buscar
+    ON isam30 (palabra,comentario)
+  ___________________________________
   SELECT * 
 FROM isam30
 WHERE fecha

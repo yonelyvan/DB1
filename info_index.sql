@@ -120,6 +120,15 @@ CREATE TABLE isam30(id bigint NOT NULL AUTO_INCREMENT,
                    fulltext(comentario)
   )
   ENGINE = MYISAM;
+  
+  
+  CREATE TABLE historial( id INT NOT NULL AUTO_INCREMENT ,
+                          palabraCHAR( 20 ) ,
+                          PRIMARY KEY ( id ) ,
+                          INDEX USING BTREE(palabra)
+                        );
+  
+  
 --_______________________________________________________
 
 --FUNCIONES //////////////////////////////////////////

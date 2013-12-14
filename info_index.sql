@@ -3,6 +3,21 @@ _________acceso desde terminal________
 
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
+  --------------------------------
+  
+  SELECT * 
+FROM isam30
+WHERE fecha
+BETWEEN  '2013-12-00 00:07:45'
+AND  '2013-12-15 00:07:45'
+AND palabra =  'manuales'
+AND MATCH (
+comentario
+)
+AGAINST (
+'libro'
+)
+LIMIT 0 , 20
 _______________________________________________
 SHOW INDEX FROM name_table;           // muestra las indices q tien la tabla 'name_tyable'.
 DROP INDEX name_index ON  name_table; // elimina el indice 'name_index' de la tabla 'nname_table'.

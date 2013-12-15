@@ -7,6 +7,54 @@ _________acceso desde terminal________
   CREATE FULLTEXT INDEX buscar
     ON isam30 (palabra,comentario)
   ___________________________________
+  
+  
+  
+DROP TRIGGER IF EXISTS `indice_text`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_text` AFTER INSERT ON `isam` FOR EACH ROW INSERT INTO `palabras`(`id`, `palabra`) 
+VALUES 
+(NEW.id,subcadena1(NEW.comentario)),
+(NEW.id,subcadena2(NEW.comentario)),
+(NEW.id,subcadena3(NEW.comentario)),
+(NEW.id,subcadena4(NEW.comentario)),
+(NEW.id,subcadena5(NEW.comentario)),
+(NEW.id,subcadena6(NEW.comentario)),
+(NEW.id,subcadena7(NEW.comentario)),
+(NEW.id,subcadena8(NEW.comentario)),
+(NEW.id,subcadena9(NEW.comentario)),
+(NEW.id,subcadena10(NEW.comentario));
+
+CREATE FUNCTION subcadena2 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-9), ' ', 1)
+
+CREATE FUNCTION subcadena3 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-8), ' ', 1)
+
+CREATE FUNCTION subcadena4 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-7), ' ', 1)
+
+CREATE FUNCTION subcadena5 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-6), ' ', 1)
+
+CREATE FUNCTION subcadena6 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-5), ' ', 1)
+
+CREATE FUNCTION subcadena7 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-4), ' ', 1)
+
+CREATE FUNCTION subcadena8 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-3), ' ', 1)
+
+CREATE FUNCTION subcadena9 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-2), ' ', 1)
+
+CREATE FUNCTION subcadena10 (s char(150)) RETURNS char(15)
+RETURN SUBSTRING_INDEX(SUBSTRING_INDEX(s,' ',-1), ' ', 1)
+
+
+
+
+_________________________
+
   SELECT * 
 FROM isam30
 WHERE fecha

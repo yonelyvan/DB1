@@ -156,6 +156,11 @@ CREATE FUNCTION get_fecha(cont bigint) RETURNS DATETIME
 RETURN DATE_ADD('2013-01-01 00:00:00', INTERVAL cont SECOND);
 
 
+CREATE PROCEDURE set_palabra( id BIGINT, palabraCHAR( 20 ) ) INSERT INTO  `palabras` (  `id` ,  `palabra` ) 
+VALUES (
+id, palabra
+)
+
 
 --////////////////////////////////////////////
 

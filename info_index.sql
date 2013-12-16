@@ -8,6 +8,12 @@ _________acceso desde terminal________
     ON isam30 (palabra,comentario)
   ___________________________________
   
+  CREATE PROCEDURE set_palabra(palabra char(20),llave CHAR(20),f1 DATETIME,f2 DATETIME)
+    SELECT * FROM isam 
+    where palabra = palabra;
+     limit 0,20;
+  
+  ____________________________________
   
   
 DROP TRIGGER IF EXISTS `indice_text`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_text` AFTER INSERT ON `isam` FOR EACH ROW INSERT INTO `palabras`(`id`, `palabra`) 

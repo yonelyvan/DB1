@@ -13,6 +13,8 @@ _________acceso desde terminal________
     where palabra = palabra;
      limit 0,20;
   
+  create table historial(id  INT, palabra CHAR(20),F1 DATETIME, F2 DATETIME, last INT );
+  
   ____________________________________
   
   

@@ -10,12 +10,11 @@ _________acceso desde terminal________
   
   
   CREATE TABLE raices(
-  word CHAR( 15 ) ,
-  MONTH INT,
-  YEAR INT,
-  ids VARCHAR( 30000 )
-  )
-  _______________________________
+palabraCHAR( 15 ) ,
+fecha DATE,
+ids VARCHAR( 2000 )
+)
+_____________________________
   CREATE PROCEDURE set_palabra(palabra char(20),llave CHAR(20),f1 DATETIME,f2 DATETIME)
     SELECT * FROM isam 
     where palabra = palabra;

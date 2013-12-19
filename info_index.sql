@@ -5,8 +5,10 @@ _________acceso desde terminal________
   KILL 416;   -- matar proseso 416
   --------------------------------
   
-INSERT INTO raices (palabra, fecha, ids) VALUES ('uno','2013-01-01','123456')  //actualizar si existe tabla o sino crear e insertar
-ON DUPLICATE KEY UPDATE ids='666666';
+ //actualizar si existe tabla o sino crear e insertar
+
+INSERT INTO raices (palabra, fecha, ids) VALUES ('uno','2013-01-01','123456')
+ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ','123456');
 
   
   

@@ -8,6 +8,14 @@ _________acceso desde terminal________
     ON isam30 (palabra,comentario)
   ___________________________________
   
+  
+  CREATE TABLE raices(
+  wordCHAR( 15 ) ,
+  MONTH INT,
+  YEAR INT,
+  ids VARCHAR( 30000 )
+  )
+  _______________________________
   CREATE PROCEDURE set_palabra(palabra char(20),llave CHAR(20),f1 DATETIME,f2 DATETIME)
     SELECT * FROM isam 
     where palabra = palabra;

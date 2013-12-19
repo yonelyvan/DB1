@@ -29,8 +29,7 @@ VALUES
 (subcadena10(NEW.comentario) , date(NEW.fecha) , NEW.id);
 DROP TRIGGER IF EXISTS `indice_text`;
 ////////////////////////////////////////////////
-CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` AFTER INSERT ON `isam` FOR EACH ROW 
-INSERT INTO `raices`(`palabra`, `fecha`, `ids`) 
+DROP TRIGGER IF EXISTS `indice_invertido`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` AFTER INSERT ON `isam` FOR EACH ROW INSERT INTO `raices`(`palabra`, `fecha`, `ids`) 
 VALUES 
 (subcadena1 (NEW.comentario) , date(NEW.fecha) , NEW.id),
 (subcadena2 (NEW.comentario) , date(NEW.fecha) , NEW.id),
@@ -44,7 +43,8 @@ VALUES
 (subcadena10(NEW.comentario) , date(NEW.fecha) , NEW.id)
 
 ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id);
-DROP TRIGGER IF EXISTS `indice_text`;
+
+
 
 
 

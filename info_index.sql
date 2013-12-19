@@ -10,7 +10,7 @@ _________acceso desde terminal________
   
   
   CREATE TABLE raices(
-  wordCHAR( 15 ) ,
+  word CHAR( 15 ) ,
   MONTH INT,
   YEAR INT,
   ids VARCHAR( 30000 )

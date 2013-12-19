@@ -5,6 +5,13 @@ _________acceso desde terminal________
   KILL 416;   -- matar proseso 416
   --------------------------------
   
+  
+  
+CREATE PROCEDURE get_ids( d DATE, wordCHAR( 15 ) ) SELECT  `ids` 
+FROM  `raices` 
+WHERE palabra = word
+AND fecha = d
+  _____________________________________
  //actualizar si existe tabla o sino crear e insertar
 
 INSERT INTO raices (palabra, fecha, ids) VALUES ('uno','2013-01-01','123456')

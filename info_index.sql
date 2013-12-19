@@ -4,6 +4,34 @@ _________acceso desde terminal________
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
   --------------------------------
+  
+  
+  
+  
+  ///triger para indices invertidos
+  
+  DROP TRIGGER IF EXISTS `indice_text`;
+CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` AFTER INSERT ON `isam` FOR EACH ROW 
+INSERT INTO `raices`(`palabra`, `fecha`, `ids`) 
+VALUES 
+(subcadena1 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena2 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena3 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena4 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena5 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena6 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena7 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena8 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena9 (NEW.comentario) , date(NEW.fecha) , NEW.id),
+(subcadena10(NEW.comentario) , date(NEW.fecha) , NEW.id);
+ 
+  
+  
+  
+  
+  
+  
+  ---------------------------
   CREATE FULLTEXT INDEX buscar
     ON isam30 (palabra,comentario)
   ___________________________________

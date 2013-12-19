@@ -4,9 +4,9 @@ _________acceso desde terminal________
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
   --------------------------------
-  
-  
-  
+create procedure get_tweet(llave bigint)
+SELECT * FROM `isam` WHERE id=llave;
+---------
 CREATE PROCEDURE get_ids( d DATE, wordCHAR( 15 ) ) SELECT  `ids` 
 FROM  `raices` 
 WHERE palabra = word

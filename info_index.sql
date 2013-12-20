@@ -65,9 +65,9 @@ ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id);
     ON isam30 (palabra,comentario)
   ___________________________________
   
-  
-  CREATE TABLE raices(
-palabraCHAR( 15 ) ,
+ CREATE TABLE raices(
+palabra char(15),
+subpalabra CHAR( 15 ) ,
 fecha DATE,
 ids VARCHAR( 2000 )
 )

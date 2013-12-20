@@ -84,13 +84,10 @@ ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id);
   ___________________________________
 
 CREATE TABLE raices(
-palabra char(15),
 subpalabra CHAR( 15 ) ,
-year int,
-month int,
+fecha date,
 ids VARCHAR( 2000 )
 )
-
 _____________________________
   CREATE PROCEDURE set_palabra(palabra char(20),llave CHAR(20),f1 DATETIME,f2 DATETIME)
     SELECT * FROM isam 

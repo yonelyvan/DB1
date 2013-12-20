@@ -4,7 +4,10 @@ _________acceso desde terminal________
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
   --------------------------------
-  
+
+
+
+
   
 DROP TRIGGER IF EXISTS `indice_invertido`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` AFTER INSERT ON `isam`
  FOR EACH ROW INSERT INTO `raices`(`palabra`, `subpalabra`, `year`, `month`, `ids`)
@@ -277,9 +280,12 @@ CREATE TABLE isam30(id bigint NOT NULL AUTO_INCREMENT,
   
   
   CREATE TABLE historial( id INT NOT NULL AUTO_INCREMENT ,
-                          palabraCHAR( 20 ) ,
-                          PRIMARY KEY ( id ) ,
-                          INDEX USING BTREE(palabra)
+                          palabra char(15) ,
+                          subpalabra char(15) ,
+                          f1 datetime,
+                          f2 datetime,
+                          limite int,
+                          PRIMARY KEY ( id )
                         );
   
   

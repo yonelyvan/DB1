@@ -6,23 +6,20 @@ _________acceso desde terminal________
   --------------------------------
   
   
-  DROP TRIGGER IF EXISTS `indice_invertido`;
-CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` 
-AFTER INSERT ON `isam`
+DROP TRIGGER IF EXISTS `indice_invertido`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` AFTER INSERT ON `isam`
  FOR EACH ROW INSERT INTO `raices`(`palabra`, `subpalabra`, `year`, `month`, `ids`)
 VALUES 
-(subcadena1  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha),    MONTH(NEW.fecha) , NEW.id),
-(subcadena2  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena3  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) , NEW.id),
-(subcadena4  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena5  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena6  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena7  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) , NEW.id),
-(subcadena8  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena9  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
-(subcadena10(NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id)
-
-ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id
+(NEW.palabra, subcadena1 (NEW.comentario) , YEAR(NEW.fecha),    MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena2 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena3 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena4 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena5 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena6 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena7 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena8 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena9 (NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(NEW.palabra, subcadena10(NEW.comentario) , YEAR(NEW.fecha) ,  MONTH(NEW.fecha) ,  NEW.id)
+ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id;
   
   __________________________________
 create procedure get_tweet(llave bigint)

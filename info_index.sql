@@ -4,6 +4,27 @@ _________acceso desde terminal________
   SHOW PROCESSLIST; --ver prosesos
   KILL 416;   -- matar proseso 416
   --------------------------------
+  
+  
+  DROP TRIGGER IF EXISTS `indice_invertido`;
+CREATE DEFINER=`root`@`localhost` TRIGGER `indice_invertido` 
+AFTER INSERT ON `isam`
+ FOR EACH ROW INSERT INTO `raices`(`palabra`, `subpalabra`, `year`, `month`, `ids`)
+VALUES 
+(subcadena1  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha),    MONTH(NEW.fecha) , NEW.id),
+(subcadena2  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena3  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) , NEW.id),
+(subcadena4  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena5  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena6  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena7  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) , NEW.id),
+(subcadena8  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena9  (NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id),
+(subcadena10(NEW.palabra, NEW.comentario) , YEAR(NEW.fecha) ,   MONTH(NEW.fecha) ,  NEW.id)
+
+ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id
+  
+  __________________________________
 create procedure get_tweet(llave bigint)
 SELECT * FROM `isam` WHERE id=llave;
 ---------

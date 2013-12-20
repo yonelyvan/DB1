@@ -279,15 +279,14 @@ CREATE TABLE isam30(id bigint NOT NULL AUTO_INCREMENT,
   ENGINE = MYISAM;
   
   
-  CREATE TABLE historial( id INT NOT NULL AUTO_INCREMENT ,
-                          palabra char(15) ,
-                          subpalabra char(15) ,
-                          f1 datetime,
-                          f2 datetime,
-                          limite int,
-                          PRIMARY KEY ( id )
-                        );
-  
+   CREATE TABLE historial( id INT NOT NULL AUTO_INCREMENT ,
+                           palabra CHAR(15) ,
+                           subpalabra CHAR(15) ,
+                           f1 datetime,
+                           f2 datetime,
+                           limite int,
+                           PRIMARY KEY ( id ) 
+                          );
   
 --_______________________________________________________
 

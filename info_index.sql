@@ -64,13 +64,15 @@ ON DUPLICATE KEY UPDATE ids= CONCAT(ids,' ',NEW.id);
   CREATE FULLTEXT INDEX buscar
     ON isam30 (palabra,comentario)
   ___________________________________
-  
- CREATE TABLE raices(
+
+CREATE TABLE raices(
 palabra char(15),
 subpalabra CHAR( 15 ) ,
-fecha DATE,
+year int,
+month int,
 ids VARCHAR( 2000 )
 )
+
 _____________________________
   CREATE PROCEDURE set_palabra(palabra char(20),llave CHAR(20),f1 DATETIME,f2 DATETIME)
     SELECT * FROM isam 

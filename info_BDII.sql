@@ -8,4 +8,6 @@ CREATE TABLE venta(id_venta     	int NOT NULL AUTO_INCREMENT,
                    PRIMARY KEY (id_venta)
                     );
 
-ALTER TABLE  `venta` ADD INDEX (  `cliente` ) ;
+
+INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`) 
+VALUES ('yonel','cuaderno','2013-01-01 00:00:00',1,13,13);

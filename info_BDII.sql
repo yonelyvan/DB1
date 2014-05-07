@@ -20,3 +20,59 @@ INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_u
 VALUES ('yonel','gato',get_fecha(120),1,20,20);
 
 
+///////////////////////////
+
+#include <mysql++/mysql++.h>
+// >$ g++ -o m test1.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+     
+string usuarios[]={"Daniel","Juan","Adrian","Marc","Alejandro","Jose","David","Angel","Diego","Pablo"
+                   "Ana","Daniela","Isa","Pamela","Karen","Laura","Avril","Maria","Lucia","Paula"
+                   "Sara","Sofia","Mercy","Marisol","Jimena","Martin","Luci","Norma","Persi","Niki"}; 
+
+string productos[]={"Lapiz","Cuaderno","Goma","Marcador","Corrector","Borrador","Folder","Colores","Temperas","Tijera",
+                   "Lapiz","Cuaderno","Goma","Marcador","Corrector","Borrador","Folder","Colores","Temperas","Tijera",
+                   "Lapiz","Cuaderno","Goma","Marcador","Corrector","Borrador","Folder","Colores","Temperas","Tijera",
+                   "Lapiz","Cuaderno","Goma","Marcador","Corrector","Borrador","Folder","Colores","Temperas","Tijera",
+                   "Lapiz","Cuaderno","Goma","Marcador","Corrector","Borrador","Folder","Colores","Temperas","Tijera"};
+
+int precio_unitario[]={1,5,2,3,3,4,1,5,12,6,
+                      1,5,2,3,3,4,1,5,12,6,
+                      1,5,2,3,3,4,1,5,12,6,
+                      1,5,2,3,3,4,1,5,12,6,
+                      1,5,2,3,3,4,1,5,12,6};
+   /*
+for(int i=0;i<10;i++){
+    int n=rand()%50;
+    cout<< usuarios[rand()%10] <<" "<<productos[n]<<" " << costo_unitario[n]<<endl;
+    }
+*/
+int cantida_registros =3000;
+
+
+    mysqlpp::Connection conn(false);
+    if (conn.connect(NULL,"localhost","root", "levesques")) {
+        conn.select_db("ventas");
+        mysqlpp::Query query = conn.query();
+        for(int i=0;i<cantida_registros;i++){///c
+            int p=rand()%50;///c
+            int cantidad = rand()%10; if(cantidad==0){cantidad++;}
+            //query.reset();
+            query<<"INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`)"; 
+            query<<"VALUES ('"<< usuarios[rand()%30] <<"','"<< productos[p] <<"',get_fecha("<< i*60 <<"),"<< cantidad <<","<< precio_unitario[p] <<","<< cantidad*precio_unitario[p]<<");";
+            query.execute();
+        }
+    }
+
+
+return 0;
+}
+
+
+
+//////////////////////////

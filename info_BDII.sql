@@ -26,8 +26,8 @@ VALUES ('yonel','gato',get_fecha(120),1,20,20);
 // >$ g++ -o m test1.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
+
 
 int main(){
      
@@ -46,14 +46,8 @@ int precio_unitario[]={1,5,2,3,3,4,1,5,12,6,
                       1,5,2,3,3,4,1,5,12,6,
                       1,5,2,3,3,4,1,5,12,6,
                       1,5,2,3,3,4,1,5,12,6};
-   /*
-for(int i=0;i<10;i++){
-    int n=rand()%50;
-    cout<< usuarios[rand()%10] <<" "<<productos[n]<<" " << costo_unitario[n]<<endl;
-    }
-*/
-int cantida_registros =3000;
 
+int cantida_registros =3000;
 
     mysqlpp::Connection conn(false);
     if (conn.connect(NULL,"localhost","root", "levesques")) {
@@ -68,11 +62,7 @@ int cantida_registros =3000;
             query.execute();
         }
     }
-
-
 return 0;
 }
-
-
 
 //////////////////////////

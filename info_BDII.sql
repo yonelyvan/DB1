@@ -53,13 +53,15 @@ int precio_unitario[]={1,5,2,3,3,4,1,5,12,6,
 int cantida_registros =3000;
 
     mysqlpp::Connection conn(false);
-    if (conn.connect(NULL,"localhost","root", "levesques")) {
-        conn.select_db("ventas");
+    if (conn.connect(NULL,"localhost","root", "123456")) { // cambiar contraseña
+        conn.select_db("ventas"); //conecta a la BD 'venta'
         mysqlpp::Query query = conn.query();
-        for(int i=0;i<cantida_registros;i++){///c
-            int p=rand()%50;///c
-            int cantidad = rand()%10; if(cantidad==0){cantidad++;}
-            //query.reset();
+        
+        for(int i=0;i<cantida_registros;i++){
+            int p=rand()%50; //selecion del producto
+            int cantidad = rand()%10; if(cantidad==0){cantidad++;} //ningun producto cuesta .s/0.0
+            
+            query.reset();
             query<<"INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`)"; 
             query<<"VALUES ('"<< usuarios[rand()%30] <<"','"<< productos[p] <<"',get_fecha("<< i*60 <<"),"<< cantidad <<","<< precio_unitario[p] <<","<< cantidad*precio_unitario[p]<<");";
             query.execute();

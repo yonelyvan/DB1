@@ -2,9 +2,9 @@ CREATE TABLE venta(id_venta     	int NOT NULL AUTO_INCREMENT,
                    cliente      	char(20) , 
                    producto    	char(20) ,
                    fecha_venta 	datetime ,
-                   cantidad  	int      ,
-                   precio_unitario 	int      ,
-                   precio_total       int      ,
+                   cantidad  	int ,
+                   precio_unitario 	int ,
+                   precio_total       int ,
                    PRIMARY KEY (id_venta)
                    );
 
@@ -25,7 +25,8 @@ VALUES ('yonel','gato',get_fecha(120),1,20,20);
 
 #include <mysql++/mysql++.h>
 // instalar libreria:  $ sudo apt-get install libmysql++ libmysql++-dev
-// compilar:           $ g++ -o m test1.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
+// compilar:           $ g++ -o venta venta.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
+// ejecutar:           $ ./venta
 #include <iostream>
 #include <iomanip>
 using namespace std;

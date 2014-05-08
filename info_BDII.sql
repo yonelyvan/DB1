@@ -23,7 +23,8 @@ VALUES ('yonel','gato',get_fecha(120),1,20,20);
 ///////////////////////////
 
 #include <mysql++/mysql++.h>
-// >$ g++ -o m test1.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
+// instalar libreria:  $ sudo apt-get install libmysql++ libmysql++-dev
+// compilar:           $ g++ -o m test1.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
 #include <iostream>
 #include <iomanip>
 using namespace std;

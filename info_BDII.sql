@@ -24,9 +24,9 @@ VALUES ('yonel','gato',get_fecha(120),1,20,20);
 /////////////----venta.cpp-----//////////////
 
 #include <mysql++/mysql++.h>
-// instalar libreria:  $ sudo apt-get install libmysql++ libmysql++-dev
-// compilar:           $ g++ -o venta venta.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
-// ejecutar:           $ ./venta
+/// instalar libreria:  $ sudo apt-get install libmysql++ libmysql++-dev
+/// compilar:           $ g++ -o venta venta.cpp -lmysqlpp -I /usr/include/mysql++/ -I /usr/include/mysql
+/// ejecutar:           $ ./venta
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -53,13 +53,13 @@ int precio_unitario[]={1,5,2,3,3,4,1,5,12,6,
 int cantida_registros =3000;
 
     mysqlpp::Connection conn(false);
-    if (conn.connect(NULL,"localhost","root", "123456")) { // cambiar contraseña
-        conn.select_db("ventas"); //conecta a la BD 'venta'
+    if (conn.connect(NULL,"localhost","root", "123456")) { /// cambiar contraseña
+        conn.select_db("ventas"); ///conecta a la BD 'venta'
         mysqlpp::Query query = conn.query();
         
         for(int i=0;i<cantida_registros;i++){
-            int p=rand()%50; //selecion del producto
-            int cantidad = rand()%10; if(cantidad==0){cantidad++;} //ningun producto cuesta .s/0.0
+            int p=rand()%50; ///selecion del producto
+            int cantidad = rand()%10; if(cantidad==0){cantidad++;} ///ningun producto cuesta .s/0.0
             
             query.reset();
             query<<"INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`)"; 

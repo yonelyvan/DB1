@@ -54,7 +54,7 @@ int cantida_registros =3000;
 
     mysqlpp::Connection conn(false);
     if (conn.connect(NULL,"localhost","root", "123456")) { //-- cambiar contraseña
-        conn.select_db("ventas"); //--conecta a la BD 'venta'
+        conn.select_db("ventas"); //--conecta a la BD 'ventas' 
         mysqlpp::Query query = conn.query();
         
         for(int i=0;i<cantida_registros;i++){

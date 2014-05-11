@@ -13,12 +13,12 @@ INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_u
 VALUES ('yonel','cuaderno','2013-01-01 00:00:00',1,13,13);
 
 
-CREATE FUNCTION get_fecha(cont int) RETURNS DATETIME
+CREATE FUNCTION get_date(cont int) RETURNS DATE
 RETURN DATE_ADD('2011-01-01 00:00:00', INTERVAL cont SECOND);
 
 --usando la funcion get_fecha que aumenta en 120 segundos a una fecha inicial
 INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`) 
-VALUES ('yonel','gato',get_fecha(120),1,20,20);
+VALUES ('yonel','gato',get_date(120),1,20,20);
 ------------------------------------------
 --modelo ventas 
 

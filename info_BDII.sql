@@ -19,6 +19,39 @@ RETURN DATE_ADD('2011-01-01 00:00:00', INTERVAL cont SECOND);
 --usando la funcion get_fecha que aumenta en 120 segundos a una fecha inicial
 INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`) 
 VALUES ('yonel','gato',get_fecha(120),1,20,20);
+------------------------------------------
+CREATE TABLE venta(Cat_producto char(20),
+                   producto_key      int,
+                   producto     char(20),
+                   region       char(20),
+                   vendedor     char(20),
+				   cliente_key       int, 
+                   cliente      char(20), 
+                   factura    	char(20),
+                   d_01         char(20),
+                   d_02         char(20),
+                   d_03         char(20),
+                   d_04         char(20),
+                   d_05         char(20),
+                   d_06         char(20),
+                   date_id      datetime,
+                   ventas			 int,
+                   costo             int,
+                   unidades          int,
+                   M_01              int,
+                   M_02              int,
+                   M_03              int,
+                   );
+
+
+
+--Categoría de Productos	Producto Key  Producto   	Region	 Vendedor 	Cliente Key	Cliente	  Factura	Dimension 01	       Dimension 02	    Dimension 03	Dimension 04	Dimension 05	Dimension 06	DateID	     Ventas	     Costo	 Unidades	Metric1	Metric2	Metric3
+--Drinks	                7751	      Power Cola	Miami	 ELIZABETH 	357	        FLEXSORT  A-2233	carbonated soft drink  Light Beverages	8oz.	        Aluminium Can	*NA	            *NA             2008-01-01	 $5,474 	 $3,964  0	        0	    0	    0
+
+
+------------------------------------------
+
+
 
 
 /////////////----venta.cpp-----//////////////

@@ -20,29 +20,28 @@ RETURN DATE_ADD('2011-01-01 00:00:00', INTERVAL cont SECOND);
 INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`) 
 VALUES ('yonel','gato',get_fecha(120),1,20,20);
 ------------------------------------------
-CREATE TABLE venta(Cat_producto char(20),
-                   producto_key      int,
-                   producto     char(20),
-                   region       char(20),
-                   vendedor     char(20),
-		   cliente_key       int, 
-                   cliente      char(20), 
-                   factura    	char(20),
-                   d_01         char(20),
-                   d_02         char(20),
-                   d_03         char(20),
-                   d_04         char(20),
-                   d_05         char(20),
-                   d_06         char(20),
-                   date_id      datetime,
-                   ventas            int,
-                   costo             int,
-                   unidades          int,
-                   M_01              int,
-                   M_02              int,
-                   M_03              int,
-                   );
-
+CREATE TABLE ventas(Cat_producto char(20),
+                    producto_key      int,
+                    producto     char(20),
+                    region       char(20),
+                    vendedor     char(20),
+	            cliente_key       int, 
+                    cliente      char(20), 
+                    factura    	char(20),
+                    d_01         char(20),
+                    d_02         char(20),
+                    d_03         char(20),
+                    d_04         char(20),
+                    d_05         char(20),
+                    d_06         char(20),
+                    date_id      datetime,
+                    ventas	      int,
+                    costo             int,
+                    unidades          int,
+                    M_01              int,
+                    M_02              int,
+                    M_03              int
+                    );
 ------------------------------------------
 
 

@@ -20,6 +20,8 @@ RETURN DATE_ADD('2011-01-01 00:00:00', INTERVAL cont SECOND);
 INSERT INTO `venta`( `cliente`, `producto`, `fecha_venta`, `cantidad`, `precio_unitario`, `precio_total`) 
 VALUES ('yonel','gato',get_fecha(120),1,20,20);
 ------------------------------------------
+--modelo ventas 
+
 CREATE TABLE ventas(Cat_producto char(20),
                     producto_key      int,
                     producto     char(20),

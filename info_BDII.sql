@@ -25,7 +25,7 @@ CREATE TABLE venta(Cat_producto char(20),
                    producto     char(20),
                    region       char(20),
                    vendedor     char(20),
-				   cliente_key       int, 
+		   cliente_key       int, 
                    cliente      char(20), 
                    factura    	char(20),
                    d_01         char(20),
@@ -35,19 +35,13 @@ CREATE TABLE venta(Cat_producto char(20),
                    d_05         char(20),
                    d_06         char(20),
                    date_id      datetime,
-                   ventas			 int,
+                   ventas            int,
                    costo             int,
                    unidades          int,
                    M_01              int,
                    M_02              int,
                    M_03              int,
                    );
-
-
-
---Categoría de Productos	Producto Key  Producto   	Region	 Vendedor 	Cliente Key	Cliente	  Factura	Dimension 01	       Dimension 02	    Dimension 03	Dimension 04	Dimension 05	Dimension 06	DateID	     Ventas	     Costo	 Unidades	Metric1	Metric2	Metric3
---Drinks	                7751	      Power Cola	Miami	 ELIZABETH 	357	        FLEXSORT  A-2233	carbonated soft drink  Light Beverages	8oz.	        Aluminium Can	*NA	            *NA             2008-01-01	 $5,474 	 $3,964  0	        0	    0	    0
-
 
 ------------------------------------------
 

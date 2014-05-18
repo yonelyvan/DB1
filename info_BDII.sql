@@ -7,12 +7,12 @@ CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
 
 --dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
 CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 
-							tienda     char(50),
-	 						ciudad     char(50), 
-	 						posicion   char(50),
-	 						pais       char(50),
-	 						PRIMARY KEY (id_tienda)
-	 					   );  
+			    tienda     char(50),
+	 		    ciudad     char(50), 
+	 		    posicion   char(50),
+	 		    pais       char(50),
+	 		    PRIMARY KEY (id_tienda)
+	 		  );  
 
 --dim_tiempos(id_tiempo, day, month, year)
 CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 

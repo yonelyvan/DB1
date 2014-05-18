@@ -2,7 +2,7 @@
 CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
  			    producto    char(50), 
  			    categoria   char(50),
- 			    precio      int,
+ 			    precio      float,
  			    PRIMARY KEY (id_producto)
  			   );
 
@@ -27,8 +27,8 @@ CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT,
 CREATE TABLE dim_echos    ( id_tienda   int, 
            		    id_producto int, 
 			    id_tiempo   int, 
-			    venta       int
-						   ); 
+			    venta       float
+			 ); 
 
 --funciones
 

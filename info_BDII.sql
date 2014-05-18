@@ -1,4 +1,8 @@
 --dim_productos (id_producto, producto, categoria)
+--dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
+--dim_tiempos(id_tiempo, day, month, year)
+--dim_echos (id_tienda, id_producto, id_tiempo, venta)
+
 CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
  			    producto    char(50), 
  			    categoria   char(50),
@@ -6,7 +10,7 @@ CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
  			    PRIMARY KEY (id_producto)
  			   );
 
---dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
+
 CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 
 			    tienda     char(50),
 	 		    ciudad     char(50), 
@@ -15,7 +19,7 @@ CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT,
 	 		    PRIMARY KEY (id_tienda)
 	 		  );  
 
---dim_tiempos(id_tiempo, day, month, year)
+
 CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 
 		            day         int,
 			    month       int, 
@@ -23,7 +27,7 @@ CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT,
 			    PRIMARY KEY (id_tiempo)
 		           );
 
---dim_echos (id_tienda, id_producto, id_tiempo, venta)
+
 CREATE TABLE dim_echos    ( id_tienda   int, 
            		    id_producto int, 
 			    id_tiempo   int, 

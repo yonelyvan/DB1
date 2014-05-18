@@ -16,17 +16,17 @@ CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT,
 
 --dim_tiempos(id_tiempo, day, month, year)
 CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 
-							day         int,
-							month       int, 
-							year        int,
-							PRIMARY KEY (id_tiempo)
-						   );
+		            day         int,
+			    month       int, 
+			    year       int,
+			    PRIMARY KEY (id_tiempo)
+		           );
 
-dim_echos (id_tienda, id_producto, id_tiempo, venta)
+--dim_echos (id_tienda, id_producto, id_tiempo, venta)
 CREATE TABLE dim_echos    ( id_tienda   int, 
-							id_producto int, 
-							id_tiempo   int, 
-							venta       int
+           		    id_producto int, 
+			    id_tiempo   int, 
+			    venta       int
 						   ); 
 
 --funciones

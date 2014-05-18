@@ -1,7 +1,7 @@
 --dim_productos (id_producto, producto, categoria)
---dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
---dim_tiempos(id_tiempo, day, month, year)
---dim_echos (id_tienda, id_producto, id_tiempo, venta)
+--dim_tiendas   (id_tienda, tienda, ciudad, posicion, pais)
+--dim_tiempos   (id_tiempo, day, month, year)
+--dim_echos     (id_tienda, id_producto, id_tiempo, venta)
 
 CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
  			    producto    char(50), 

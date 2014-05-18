@@ -1,3 +1,59 @@
+--dim_productos (id_producto, producto, categoria)
+CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
+ 							producto    char(50), 
+ 							categoria   char(50),
+ 							PRIMARY KEY (id_producto)
+ 						   );
+
+--dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
+CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 
+							tienda     char(50),
+	 						ciudad     char(50), 
+	 						posicion   char(50),
+	 						pais       char(50),
+	 						PRIMARY KEY (id_tienda)
+	 					   );  
+
+--dim_tiempos(id_tiempo, day, month, year)
+CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 
+							day         int,
+							month       int, 
+							year        int,
+							PRIMARY KEY (id_tiempo)
+						   );
+
+dim_echos (id_tienda, id_producto, id_tiempo, venta)
+CREATE TABLE dim_echos    ( id_tienda   int, 
+							id_producto int, 
+							id_tiempo   int, 
+							venta       int
+						   ); 
+
+--funciones
+
+CREATE FUNCTION get_date(cont bigint) RETURNS DATE
+RETURN DATE_ADD('2013-01-01', INTERVAL cont DAY);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------
+
 CREATE TABLE venta(id_venta     	int NOT NULL AUTO_INCREMENT, 
                    cliente      	char(20) , 
                    producto    	char(20) ,

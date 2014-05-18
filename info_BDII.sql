@@ -1,9 +1,10 @@
 --dim_productos (id_producto, producto, categoria)
 CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
- 							producto    char(50), 
- 							categoria   char(50),
- 							PRIMARY KEY (id_producto)
- 						   );
+ 			    producto    char(50), 
+ 			    categoria   char(50),
+ 			    precio      int,
+ 			    PRIMARY KEY (id_producto)
+ 			   );
 
 --dim_tiendas (id_tienda, tienda, ciudad, posicion, pais)
 CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 

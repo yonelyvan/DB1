@@ -1,4 +1,4 @@
---dim_productos (id_producto, producto, precio, categoria)
+--dim_productos (id_producto, producto, categoria, precio)
 --dim_tiendas   (id_tienda, tienda, ciudad, posicion, pais)
 --dim_tiempos   (id_tiempo, day, month, year)
 --dim_echos     (id_tienda, id_producto, id_tiempo, venta)

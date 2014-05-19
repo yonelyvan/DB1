@@ -39,7 +39,22 @@ CREATE TABLE dim_echos    ( id_tienda   int,
 CREATE FUNCTION get_date(cont bigint) RETURNS DATE
 RETURN DATE_ADD('2013-01-01', INTERVAL cont DAY);
 
+---- la tarea 
 
+--1
+SELECT year ,sum(dim_productos.id_producto * precio)
+FROM (dim_hechos  inner join dim_tiempos  on dim_hechos.id_tiempo = dim_tiempos.id_tiempo)  inner join dim_productos on dim_hechos.id_producto = dim_productos.id_producto
+group by year;
+
+--2
+SELECT pais,categoria,year ,sum(dim_productos.id_producto * precio)
+FROM ((dim_hechos  inner join dim_tiempos  on dim_hechos.id_tiempo = dim_tiempos.id_tiempo)  inner join dim_productos on dim_hechos.id_producto = dim_productos.id_producto)
+      inner join dim_tiendas on dim_hechos.id_tienda = dim_tiendas.id_tienda
+      group by pais,categoria,year;
+--3
+SELECT pais, ciudad, sum(dim_productos.id_producto * precio)
+FROM   (dim_hechos inner join dim_productos on dim_hechos.id_producto = dim_productos.id_producto) inner join  dim_tiendas on dim_hechos.id_tienda = dim_tiendas.id_tienda
+group by pais, ciudad;
 
 
 

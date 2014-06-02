@@ -102,7 +102,8 @@ _____________________________
   ____________________________________
   
   
-DROP TRIGGER IF EXISTS `indice_text`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_text` AFTER INSERT ON `isam` FOR EACH ROW INSERT INTO `palabras`(`id`, `palabra`) 
+DROP TRIGGER IF EXISTS `indice_text`;CREATE DEFINER=`root`@`localhost` TRIGGER `indice_text` 
+AFTER INSERT ON `isam` FOR EACH ROW INSERT INTO `palabras`(`id`, `palabra`) 
 VALUES 
 (NEW.id,subcadena1(NEW.comentario)),
 (NEW.id,subcadena2(NEW.comentario)),

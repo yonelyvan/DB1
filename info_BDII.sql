@@ -1,3 +1,24 @@
+
+
+
+--copiar de una tabla a otra ...
+insert into pos_2 select * from pos_1 where x=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================================================================
 --dim_productos (id_producto, producto, categoria, precio)
 --dim_tiendas   (id_tienda, tienda, ciudad, posicion, pais)
 --dim_tiempos   (id_tiempo, day, month, year)

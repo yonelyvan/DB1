@@ -6,19 +6,19 @@ insert into constellation.dim_productos select * from estrella.dim_productos
 
 ---- tablas de hechos
 CREATE TABLE hechos_tienda_producto (   id_tienda   int, 
-										id_producto int, 
-										venta       int
-									); 
+					id_producto int, 
+					venta       int
+				    ); 
 
 CREATE TABLE hechos_tienda_tiempo   (   id_tienda   int, 
-									   id_tiempo   int, 
-									   venta       int
-							    	);
+				        id_tiempo   int, 
+				        venta       int
+				    );
 
 CREATE TABLE hechos_producto_tiempo (	id_producto int, 
-										id_tiempo   int, 
-										venta       int
-									);
+					id_tiempo   int, 
+					venta       int
+				    );
 ----
 insert into constellation.hechos_tienda_producto select id_tienda, id_producto, venta from estrella.dim_hechos
 insert into constellation.hechos_tienda_tiempo select id_tienda, id_tiempo, venta from estrella.dim_hechos

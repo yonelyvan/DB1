@@ -2,8 +2,10 @@
 
 
 
---copiar de una tabla de una BD a otra ...
+--copiar de una tabla de una BD a otra ...  
 insert into constellation.dim_tiendas select * from estrella.dim_tiendas
+insert into constellation.dim_tiempos select * from estrella.dim_tiempos
+insert into constellation.dim_productos select * from estrella.dim_productos
 
 --copiar de una tabla a otra ...
 insert into pos_2 select * from pos_1 where x=1

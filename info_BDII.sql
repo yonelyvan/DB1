@@ -1,6 +1,10 @@
 
 
 
+
+--copiar de una tabla de una BD a otra ...
+insert into db1.pos_1 select * from db2.poss_1 where i=1;
+
 --copiar de una tabla a otra ...
 insert into pos_2 select * from pos_1 where x=1
 

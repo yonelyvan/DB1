@@ -3,28 +3,28 @@ create database constellation;
 
 
 CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
- 							producto    char(50), 
- 							categoria   char(50),
- 							precio      float,
- 							PRIMARY KEY (id_producto)
- 						   );
+ 			    producto    char(50), 
+ 			    categoria   char(50),
+ 			    precio      float,
+ 			    PRIMARY KEY (id_producto)
+ 			  );
 
 
-CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 
-							tienda     char(50),
-	 						ciudad     char(50), 
-	 						posicion   char(50),
-	 						pais       char(50),
-	 						PRIMARY KEY (id_tienda)
-	 					   );  
+CREATE TABLE dim_tiendas  (     id_tienda   int NOT NULL AUTO_INCREMENT, 
+				tienda     char(50),
+		 		ciudad     char(50), 
+		 		posicion   char(50),
+		 		pais       char(50),
+		 		PRIMARY KEY (id_tienda)
+		 	   );  
 
 
-CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 
-							day         int,
-							month       int, 
-							year        int,
-							PRIMARY KEY (id_tiempo)
-						   );
+CREATE TABLE dim_tiempos  (     id_tiempo   int NOT NULL AUTO_INCREMENT, 
+				day         int,
+				month       int, 
+				year        int,
+				PRIMARY KEY (id_tiempo)
+		           );
 
 ---- tablas de hechos
 CREATE TABLE hechos    ( id_tienda   int, 

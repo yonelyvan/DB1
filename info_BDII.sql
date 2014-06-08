@@ -1,33 +1,93 @@
+============constellation==========================
+create database constellation;
 
---copiar de una tabla de una BD a otra ...
-insert into constellation.dim_tiendas select * from estrella.dim_tiendas
-insert into constellation.dim_tiempos select * from estrella.dim_tiempos
-insert into constellation.dim_productos select * from estrella.dim_productos
+
+CREATE TABLE dim_productos( id_producto int NOT NULL AUTO_INCREMENT,
+ 							producto    char(50), 
+ 							categoria   char(50),
+ 							precio      float,
+ 							PRIMARY KEY (id_producto)
+ 						   );
+
+
+CREATE TABLE dim_tiendas  ( id_tienda   int NOT NULL AUTO_INCREMENT, 
+							tienda     char(50),
+	 						ciudad     char(50), 
+	 						posicion   char(50),
+	 						pais       char(50),
+	 						PRIMARY KEY (id_tienda)
+	 					   );  
+
+
+CREATE TABLE dim_tiempos  ( id_tiempo   int NOT NULL AUTO_INCREMENT, 
+							day         int,
+							month       int, 
+							year        int,
+							PRIMARY KEY (id_tiempo)
+						   );
 
 ---- tablas de hechos
+CREATE TABLE hechos    ( id_tienda   int, 
+			 id_producto int, 
+			 id_tiempo   int, 
+			 venta       int
+		       );
+
 CREATE TABLE hechos_tienda_producto (   id_tienda   int, 
 					id_producto int, 
 					venta       int
-				    ); 
+				     ); 
 
 CREATE TABLE hechos_tienda_tiempo   (   id_tienda   int, 
-				        id_tiempo   int, 
-				        venta       int
-				    );
+					id_tiempo   int, 
+					venta       int
+				     );
 
 CREATE TABLE hechos_producto_tiempo (	id_producto int, 
 					id_tiempo   int, 
 					venta       int
-				    );
-----
+				     );
+
+--copiar de una tabla de una BD a otra ...----------------------------------------
+insert into constellation.dim_tiendas select * from estrella.dim_tiendas
+insert into constellation.dim_tiempos select * from estrella.dim_tiempos
+insert into constellation.dim_productos select * from estrella.dim_productos
+------------------------------------------------------------------------
+insert into constellation.hechos select id_tienda, id_producto,id_tiempo, venta from estrella.dim_hechos
 insert into constellation.hechos_tienda_producto select id_tienda, id_producto, venta from estrella.dim_hechos
 insert into constellation.hechos_tienda_tiempo select id_tienda, id_tiempo, venta from estrella.dim_hechos
 insert into constellation.hechos_producto_tiempo select id_producto, id_tiempo, venta from estrella.dim_hechos
 
+--------trigers actualizan cada ves q se inserta en tabla estrella.hechos 
+CREATE DEFINER=`root`@`localhost` TRIGGER `tienda_producto` 
+AFTER INSERT ON `hechos` FOR EACH ROW 
+INSERT INTO `hechos_tienda_producto`(`id_tienda`, `id_producto`, `venta`) 
+VALUES (new.id_tienda, new.id_producto, new.venta);
+--
 
+CREATE DEFINER=`root`@`localhost` TRIGGER `tienda_tiempo` 
+AFTER INSERT ON `hechos` FOR EACH ROW 
+INSERT INTO `hechos_tienda_tiempo`(`id_tienda`, `id_tiempo`, `venta`) 
+VALUES (new.id_tienda, new.id_tiempo, new.venta);
+--
 
-
+CREATE DEFINER=`root`@`localhost` TRIGGER `producto_tiempo` 
+AFTER INSERT ON `hechos` FOR EACH ROW 
+INSERT INTO `hechos_producto_tiempo`(`id_producto`, `id_tiempo`, `venta`) 
+VALUES (new.id_producto, new.id_tiempo, new.venta);
+--
 ==============================================================================
+
+
+
+
+
+
+
+
+
+===============estrella=================================
+
 --dim_productos (id_producto, producto, categoria, precio)
 --dim_tiendas   (id_tienda, tienda, ciudad, posicion, pais)
 --dim_tiempos   (id_tiempo, day, month, year)

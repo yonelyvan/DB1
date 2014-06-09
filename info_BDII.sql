@@ -53,10 +53,10 @@ insert into constellation.dim_tiendas select * from estrella.dim_tiendas
 insert into constellation.dim_tiempos select * from estrella.dim_tiempos
 insert into constellation.dim_productos select * from estrella.dim_productos
 ------------------------------------------------------------------------
-insert into constellation.hechos select id_tienda, id_producto,id_tiempo, venta from estrella.dim_hechos
-insert into constellation.hechos_tienda_producto select id_tienda, id_producto, venta from estrella.dim_hechos
-insert into constellation.hechos_tienda_tiempo select id_tienda, id_tiempo, venta from estrella.dim_hechos
-insert into constellation.hechos_producto_tiempo select id_producto, id_tiempo, venta from estrella.dim_hechos
+insert into constellation.hechos select id_tienda, id_producto,id_tiempo, venta from estrella.hechos
+insert into constellation.hechos_tienda_producto select id_tienda, id_producto, venta from estrella.hechos
+insert into constellation.hechos_tienda_tiempo select id_tienda, id_tiempo, venta from estrella.hechos
+insert into constellation.hechos_producto_tiempo select id_producto, id_tiempo, venta from estrella.hechos
 
 --------trigers actualizan cada ves q se inserta en tabla estrella.hechos 
 CREATE DEFINER=`root`@`localhost` TRIGGER `tienda_producto` 

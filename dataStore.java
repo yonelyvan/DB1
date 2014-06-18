@@ -1,18 +1,4 @@
-package com.inno.gaedatastore;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.servlet.http.*;
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
-
-@SuppressWarnings("serial")
-public class GaedatastoreServlet extends HttpServlet {
-	public void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
         //-- entidad simple
 		DatastoreService ds= DatastoreServiceFactory.getDatastoreService();
 		
@@ -41,8 +27,3 @@ public class GaedatastoreServlet extends HttpServlet {
 		
 	    List<Entity> en = Arrays.asList(e1,e2,e3);
 	    ds.put(en);
-		
-		resp.setContentType("text/plain");
-		resp.getWriter().println(" ejecuta! ..... ejecutado! ");
-	}
-}

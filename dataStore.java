@@ -1,4 +1,28 @@
 
+
+
+// busqueda por id(por defecto)
+DatastoreService db= DatastoreServiceFactory.getDatastoreService();	
+		
+
+   long id =Long.parseLong("6509108836433920");
+	Key key=KeyFactory.createKey("usuario",id); 
+		
+    try{
+    	Entity es = db.get(key);
+    	System.out.println(es);  //imprime la entidad
+    } catch(EntityNotFoundException es){
+    	es.printStackTrace();
+    }
+
+
+
+
+
+
+
+
+
         //-- entidad simple
 		DatastoreService ds= DatastoreServiceFactory.getDatastoreService();
 		

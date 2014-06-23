@@ -1,3 +1,23 @@
+///consultas
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+		Query q = new Query("usuario")
+        .addFilter("nombre_usuario", Query.FilterOperator.EQUAL, "jhana");
+
+		System.out.println("joder!!!!!:: " + q +  " ::!!!!");
+		
+		//List<Entity> results = datastore.prepare(q)
+         //       .asList(FetchOptions.Builder.withDefaults());
+		
+		PreparedQuery pq = datastore.prepare(q);
+
+
+		for (Entity result : pq.asIterable()) {
+		  String n = (String) result.getProperty("nombre_usuario");
+		  String a = (String) result.getProperty("apellido_usuario");
+		  String c = (String) result.getProperty("correo_usuario");
+		  System.out.println(n + " " + a +" "+ c);
+		}
 
 
 

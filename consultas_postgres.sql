@@ -16,6 +16,6 @@ select id,edad  from alumno where id = 1;
 
 
 -- en directorio project/pgsql
---     export PATH=$HOME/project/bin:$PATH
---     export PGDATA=DemoDir
---     initdb
+export PATH=$HOME/project/bin:$PATH
+export PGDATA=DemoDir
+initdb

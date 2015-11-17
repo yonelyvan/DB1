@@ -1,7 +1,8 @@
 psql -l
 create database DemoDB;
 psql DemoDB --enter into DB 'DemoDB'
-\dt --view tables
+\dt --ver tablas
+\q  -- salir 
 
 ---tabes
 create table alumno(id int, nombre char(20), edad int, primary key(id));

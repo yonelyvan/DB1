@@ -1,5 +1,10 @@
+-- en directorio project/pgsql
+export PATH=$HOME/project/bin:$PATH
+export PGDATA=DemoDir
+initdb
+---------------------------------------------
 psql -l
-create database DemoDB;
+createdb DemoDB  -- create database DemoDB;
 psql DemoDB --enter into DB 'DemoDB'
 \dt --ver tablas
 \q  -- salir 
@@ -16,7 +21,4 @@ select * from profesor where nombre = 'prof2';
 select id,edad  from alumno where id = 1;
 
 
--- en directorio project/pgsql
-export PATH=$HOME/project/bin:$PATH
-export PGDATA=DemoDir
-initdb
+

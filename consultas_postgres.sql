@@ -1,3 +1,5 @@
+-- instalacion
+https://wiki.postgresql.org/wiki/Working_with_Eclipse
 -- en directorio project/pgsql
 export PATH=$HOME/project/bin:$PATH
 export PGDATA=DemoDir
